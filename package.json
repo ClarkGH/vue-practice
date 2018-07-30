@@ -1,0 +1,11 @@
+{
+  "name": "vue-practice",
+  "version": "1.0.0",
+  "description": "general repository for mock vue applications for practice for work",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Clark Hinchcliff",
+  "license": "MIT"
+}
