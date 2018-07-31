@@ -12,6 +12,82 @@
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js">//dev version</script>
 
   <script> 
+    // every vue app starts by creating a new vue instance with the vue function
+    // data is added to Vue's reactivity system
+    var data = {
+      a: 1,
+      b: 2,
+      c: 3,
+      d: 4,
+      e: 5,
+      f: 6,
+      g: 7,
+      h: 8,
+      i: 9,
+      j: 10,
+      k: 11,
+      l: 12,
+      m: 13,
+      n: 14,
+      o: 15,
+      p: 16,
+      q: 17,
+      r: 18,
+      s: 19,
+      t: 20,
+      u: 21,
+      v: 22,
+      w: 23,
+      x: 24,
+      y: 25,
+      z: 26
+    }
+    var vm = new Vue({
+      data: data
+    }); 
+    // can set data by calling vue object
+    // changing the vue instance data effects the original and vice versa
+    // the instance will only re-render on data changes if the change happens if the instance existed when the instance was created
+    
+    
+    // If you freeze the object with Object.freeze(), you can't change properties and there will be no re-rendering
+    var obj = {
+      foo: 'bar'
+    };
+
+    Object.freeze(obj); //can no longer change things
+
+    new Vue({
+      el: '#app',
+      data: obj
+    });
+
+    var data = { a: 1 };
+    var vm = new Vue({
+      el: '#example',
+      data: data
+    });
+
+    //Vue instances also have instance properties and methods that are prefixed with $
+
+    vm.$data === data // => true
+    vm.$el === document.getElementById('example') // => true
+
+    // $watch is an instance method
+    vm.$watch('a', function (newValue, oldValue) {
+      // This callback will be called when `vm.a` changes
+    })
+
+    // life cycle hooks also exist, as the following created hook
+    new Vue({
+      data: {
+        a: 1
+      },
+      created: function () {
+        // `this` points to the vm instance
+        console.log('a is: ' + this.a)
+      }
+    });
   </script>
 </body>
 
